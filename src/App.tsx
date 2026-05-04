@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import logoVaal from './assets/logo_vaal.png'
-import ghvImage from './assets/GHV.png'
-import fifteenYears from './assets/15years.png'
+import ghvImage from './assets/GHV.webp'
+import fifteenYears from './assets/15years.webp'
 import {
   Shield, FileText, PiggyBank, TrendingUp, Heart, Car, ScrollText,
   Menu, X, ChevronDown,
   Phone, Mail, MapPin, ArrowRight, CheckCircle
 } from 'lucide-react'
-
-// ─── DATA ────────────────────────────────────────────────────────────────────
 
 const services = [
   {
@@ -63,8 +61,6 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-// ─── COMPONENTS ──────────────────────────────────────────────────────────────
-
 function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -79,28 +75,20 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
         <a href="#home" className="navbar__logo">
-          <img src={logoVaal} alt="GrowthHouse Vaal" />
+          <img src={logoVaal} alt="GrowthHouse Vaal" width="180" height="48" />
         </a>
-
         <ul className="navbar__links">
           {navLinks.map((l) => (
             <li key={l.label}>
-              <a href={l.href} className="navbar__link">
-                {l.label}
-              </a>
+              <a href={l.href} className="navbar__link">{l.label}</a>
             </li>
           ))}
         </ul>
-
-        <a href="#contact" className="btn btn--outline-nav">
-          Get Advice
-        </a>
-
+        <a href="#contact" className="btn btn--outline-nav">Get Advice</a>
         <button className="navbar__hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
       {open && (
         <div className="navbar__mobile">
           {navLinks.map((l) => (
@@ -108,9 +96,7 @@ function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn--orange" onClick={() => setOpen(false)}>
-            Get Advice
-          </a>
+          <a href="#contact" className="btn btn--orange" onClick={() => setOpen(false)}>Get Advice</a>
         </div>
       )}
     </nav>
@@ -129,17 +115,11 @@ function Hero() {
         </h1>
         <p className="hero__sub">Partnering for your success — locally in the Vaal region</p>
         <div className="hero__ctas">
-          <a href="#services" className="btn btn--orange">
-            Our Services <ArrowRight size={18} />
-          </a>
-          <a href="#contact" className="btn btn--ghost">
-            Contact Us
-          </a>
+          <a href="#services" className="btn btn--orange">Our Services <ArrowRight size={18} /></a>
+          <a href="#contact" className="btn btn--ghost">Contact Us</a>
         </div>
       </div>
-      <a href="#about" className="hero__scroll">
-        <ChevronDown size={28} />
-      </a>
+      <a href="#about" className="hero__scroll"><ChevronDown size={28} /></a>
     </section>
   )
 }
@@ -156,10 +136,17 @@ function About() {
     <section id="about" className="section about">
       <div className="container">
         <div className="about__grid">
-
           <div className="about__visual">
             <div className="about__bg-block">
-              <img src={fifteenYears} alt="15 Years of Excellence" className="about__bg-image" />
+              <img
+                src={fifteenYears}
+                alt="15 Years of Excellence"
+                className="about__bg-image"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="500"
+              />
             </div>
             <div className="about__card about__card--1">
               <span className="about__stat">15+</span>
@@ -170,7 +157,6 @@ function About() {
               <span className="about__stat-label">Satisfied Clients</span>
             </div>
           </div>
-
           <div className="about__text">
             <p className="section__eyebrow">About Us</p>
             <h2 className="section__title">A Dynamic, Multi-Faceted Brokerage</h2>
@@ -195,7 +181,6 @@ function About() {
               Speak to an Adviser <ArrowRight size={18} />
             </a>
           </div>
-
         </div>
       </div>
     </section>
@@ -213,15 +198,12 @@ function Services() {
             Comprehensive financial solutions tailored to your unique needs and goals.
           </p>
         </div>
-
         <div className="services__grid">
           {services.map((s) => {
             const Icon = s.icon
             return (
               <div key={s.title} className="service-card">
-                <div className="service-card__icon">
-                  <Icon size={28} />
-                </div>
+                <div className="service-card__icon"><Icon size={28} /></div>
                 <h3 className="service-card__title">{s.title}</h3>
                 <p className="service-card__desc">{s.description}</p>
               </div>
@@ -255,7 +237,6 @@ function Contact() {
             Ready to make your next financial decision your best? Reach out to our Vaal team today.
           </p>
         </div>
-
         <div className="contact__grid">
           <div className="contact__info">
             <div className="contact__info-block">
@@ -284,7 +265,6 @@ function Contact() {
             <p className="contact__hours">Monday – Friday: 08:00 – 17:00</p>
             <p className="contact__hours">Saturday: By appointment</p>
           </div>
-
           <div className="contact__form-wrap">
             {sent ? (
               <div className="contact__success">
@@ -297,51 +277,20 @@ function Contact() {
                 <div className="form__row">
                   <div className="form__group">
                     <label className="form__label">Full Name</label>
-                    <input
-                      className="form__input"
-                      type="text"
-                      name="name"
-                      placeholder="Your full name"
-                      value={form.name}
-                      onChange={handleChange}
-                      required
-                    />
+                    <input className="form__input" type="text" name="name" placeholder="Your full name" value={form.name} onChange={handleChange} required />
                   </div>
                   <div className="form__group">
                     <label className="form__label">Email Address</label>
-                    <input
-                      className="form__input"
-                      type="email"
-                      name="email"
-                      placeholder="your@email.com"
-                      value={form.email}
-                      onChange={handleChange}
-                      required
-                    />
+                    <input className="form__input" type="email" name="email" placeholder="your@email.com" value={form.email} onChange={handleChange} required />
                   </div>
                 </div>
                 <div className="form__group">
                   <label className="form__label">Phone Number</label>
-                  <input
-                    className="form__input"
-                    type="tel"
-                    name="phone"
-                    placeholder="+27 ..."
-                    value={form.phone}
-                    onChange={handleChange}
-                  />
+                  <input className="form__input" type="tel" name="phone" placeholder="+27 ..." value={form.phone} onChange={handleChange} />
                 </div>
                 <div className="form__group">
                   <label className="form__label">How can we help you?</label>
-                  <textarea
-                    className="form__input form__textarea"
-                    name="message"
-                    placeholder="Tell us about your financial goals or enquiry..."
-                    value={form.message}
-                    onChange={handleChange}
-                    rows={5}
-                    required
-                  />
+                  <textarea className="form__input form__textarea" name="message" placeholder="Tell us about your financial goals or enquiry..." value={form.message} onChange={handleChange} rows={5} required />
                 </div>
                 <button type="submit" className="btn btn--orange btn--full">
                   Send Message <ArrowRight size={18} />
@@ -361,7 +310,7 @@ function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <img src={logoVaal} alt="GrowthHouse Vaal" className="footer__logo" />
+            <img src={logoVaal} alt="GrowthHouse Vaal" className="footer__logo" loading="lazy" width="160" height="42" />
             <p className="footer__tagline">
               Partnering for your success in the Vaal region. Expert financial advice tailored to your life.
             </p>
@@ -370,9 +319,7 @@ function Footer() {
             <p className="footer__heading">Quick Links</p>
             <ul className="footer__links">
               {navLinks.map((l) => (
-                <li key={l.label}>
-                  <a href={l.href} className="footer__link">{l.label}</a>
-                </li>
+                <li key={l.label}><a href={l.href} className="footer__link">{l.label}</a></li>
               ))}
             </ul>
           </div>
@@ -380,9 +327,7 @@ function Footer() {
             <p className="footer__heading">Services</p>
             <ul className="footer__links">
               {services.slice(0, 5).map((s) => (
-                <li key={s.title}>
-                  <a href="#services" className="footer__link">{s.title}</a>
-                </li>
+                <li key={s.title}><a href="#services" className="footer__link">{s.title}</a></li>
               ))}
             </ul>
           </div>
@@ -403,8 +348,6 @@ function Footer() {
     </footer>
   )
 }
-
-// ─── APP ─────────────────────────────────────────────────────────────────────
 
 export default function App() {
   return (
