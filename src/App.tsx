@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import logoVaal from './assets/logo_vaal.png'
-import ghvImage from './assets/GHV.webp'
-import fifteenYears from './assets/15years.webp'
+import ghvImage from './assets/GHV.png'
+import fifteenYears from './assets/15years.png'
 import {
   Shield, FileText, PiggyBank, TrendingUp, Heart, Car, ScrollText,
   Menu, X, ChevronDown,
