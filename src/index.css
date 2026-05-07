@@ -5,21 +5,28 @@
 }
 
 :root {
-  --navy: #1a2744;
-  --navy-dark: #111c36;
-  --navy-mid: #1e3060;
-  --orange: #e8510a;
-  --orange-light: #f06022;
-  --white: #ffffff;
-  --off-white: #f5f6f8;
-  --light-gray: #eef0f4;
-  --text-body: #3a3f52;
-  --text-muted: #6b7290;
+  /* ── EXACT LOGO COLOURS ─────────────────────────────────────────────────── */
+  --navy:        #041e41;   /* logo dark navy — from roof & "HOUSE" text      */
+  --navy-dark:   #020f22;   /* deeper shade for footer                        */
+  --navy-mid:    #0a2d5e;   /* mid tint for gradients                         */
+  --orange:      #ff4100;   /* logo orange-red — primary brand colour         */
+  --orange-light:#ff6a35;   /* lightened for hover states & eyebrows          */
+
+  /* ── NEUTRALS ───────────────────────────────────────────────────────────── */
+  --white:       #ffffff;
+  --off-white:   #f5f6f8;
+  --light-gray:  #eef0f4;
+  --text-body:   #3a3f52;
+  --text-muted:  #6b7290;
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────────────────────── */
   --font-display: 'Playfair Display', serif;
-  --font-body: 'Source Sans 3', sans-serif;
-  --shadow-sm: 0 2px 8px rgba(26,39,68,0.08);
-  --shadow-md: 0 6px 24px rgba(26,39,68,0.12);
-  --shadow-lg: 0 16px 48px rgba(26,39,68,0.16);
+  --font-body:    'Source Sans 3', sans-serif;
+
+  /* ── SHADOWS ────────────────────────────────────────────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(4,30,65,0.08);
+  --shadow-md: 0 6px 24px rgba(4,30,65,0.12);
+  --shadow-lg: 0 16px 48px rgba(4,30,65,0.16);
 }
 
 html {

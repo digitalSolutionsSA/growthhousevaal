@@ -1,0 +1,164 @@
+/* ── MARQUEE SECTION ───────────────────────────────────────────────────────── */
+
+.marquee-section {
+  background: var(--white);
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.marquee-section__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 4rem;
+}
+
+/* ── TRACKS ────────────────────────────────────────────────────────────────── */
+
+.marquee-tracks {
+  display: flex;
+  flex-direction: column;
+}
+
+.marquee-track-wrapper {
+  border-top: 1px solid var(--light-gray);
+}
+
+.marquee-track-wrapper:last-child {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* ── CENTRED LABEL — bigger ────────────────────────────────────────────────── */
+
+.marquee-track-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.1rem 2rem 0.6rem;
+  text-align: center;
+}
+
+.marquee-track-label::before,
+.marquee-track-label::after {
+  content: '';
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: var(--light-gray);
+}
+
+.marquee-track-label span {
+  font-family: var(--font-display);   /* Playfair Display — more presence     */
+  font-size: 1rem;                    /* up from 0.72rem                      */
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+/* ── TRACK VIEWPORT — clickable ────────────────────────────────────────────── */
+
+.marquee-track {
+  width: 100vw;
+  overflow: hidden;
+  padding: 0.75rem 0 1.25rem;
+  cursor: pointer;             /* signals the whole row is clickable          */
+  outline: none;
+}
+
+.marquee-track:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+/* Subtle highlight on hover to reinforce clickability */
+.marquee-track:hover {
+  background: rgba(255, 65, 0, 0.03);
+}
+
+/* ── SCROLLING STRIP ───────────────────────────────────────────────────────── */
+
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee-left 45s linear infinite;
+}
+
+.marquee-inner--reverse {
+  animation: marquee-right 45s linear infinite;
+}
+
+/* ── LOGO CHIPS ────────────────────────────────────────────────────────────── */
+
+.logo-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 72px;
+  margin: 0 0.6rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  flex-shrink: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.marquee-track:hover .logo-chip {
+  border-color: rgba(255, 65, 0, 0.3);
+  box-shadow: 0 2px 12px rgba(255, 65, 0, 0.08);
+}
+
+/* ── LOGO IMAGE ────────────────────────────────────────────────────────────── */
+
+.logo-chip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(0) opacity(1);
+  transition: filter 0.25s ease;
+  display: block;
+  pointer-events: none;   /* clicks pass through to the track div             */
+}
+
+/* ── EMPTY STATE ───────────────────────────────────────────────────────────── */
+
+.marquee-empty {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0.5rem 2rem;
+}
+
+/* ── KEYFRAMES ─────────────────────────────────────────────────────────────── */
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .marquee-section {
+    padding: 4rem 0;
+  }
+
+  .marquee-track-label span {
+    font-size: 0.85rem;
+  }
+
+  .logo-chip {
+    width: 120px;
+    height: 56px;
+    margin: 0 0.4rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

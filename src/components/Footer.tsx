@@ -1,4 +1,4 @@
-import logoVaal from '../assets/logo_vaal.png'
+import logoVaal from '../assets/logo-white.png'
 
 const navLinks = [
   { label: 'Home', href: '#home' },

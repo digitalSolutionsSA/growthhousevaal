@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Phone, Mail, MapPin, ArrowRight, CheckCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowRight, CheckCircle, MessageCircle } from 'lucide-react'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
@@ -28,15 +28,31 @@ export default function Contact() {
             <div className="contact__info-block">
               <div className="contact__info-icon"><Phone size={22} /></div>
               <div>
-                <p className="contact__info-label">Phone</p>
-                <a href="tel:+27161234567" className="contact__info-value">+27 16 123 4567</a>
+                <p className="contact__info-label">Office</p>
+                <a href="tel:+27160040168" className="contact__info-value">016 004 0168</a>
+              </div>
+            </div>
+            <div className="contact__info-block">
+              <div className="contact__info-icon"><MessageCircle size={22} /></div>
+              <div>
+                <p className="contact__info-label">WhatsApp</p>
+                <a
+                  href="https://wa.me/27646864513"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__info-value"
+                >
+                  064 686 4513
+                </a>
               </div>
             </div>
             <div className="contact__info-block">
               <div className="contact__info-icon"><Mail size={22} /></div>
               <div>
                 <p className="contact__info-label">Email</p>
-                <a href="mailto:vaal@growthhouse.co.za" className="contact__info-value">vaal@growthhouse.co.za</a>
+                <a href="mailto:armandt.debruyn@growthhouse.co.za" className="contact__info-value">
+                  armandt.debruyn@growthhouse.co.za
+                </a>
               </div>
             </div>
             <div className="contact__info-block">
