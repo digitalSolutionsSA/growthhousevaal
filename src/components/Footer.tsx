@@ -45,8 +45,9 @@ export default function Footer() {
           <div className="footer__col">
             <p className="footer__heading">Contact</p>
             <ul className="footer__links">
-              <li><a href="tel:+27161234567" className="footer__link">+27 16 123 4567</a></li>
-              <li><a href="mailto:vaal@growthhouse.co.za" className="footer__link">vaal@growthhouse.co.za</a></li>
+              <li><a href="tel:+27160040168" className="footer__link">016 004 0168</a></li>
+              <li><a href="https://wa.me/27646864513" target="_blank" rel="noopener noreferrer" className="footer__link">WhatsApp: 064 686 4513</a></li>
+              <li><a href="mailto:armandt.debruyn@growthhouse.co.za" className="footer__link">armandt.debruyn@growthhouse.co.za</a></li>
               <li><span className="footer__link">Vaal Region, Gauteng</span></li>
             </ul>
           </div>
