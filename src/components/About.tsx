@@ -1,4 +1,4 @@
-import fifteenYears from '../assets/15years.png'
+import fifteenYears from '../assets/15years.webp'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
 const highlights = [

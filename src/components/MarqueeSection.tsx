@@ -10,7 +10,7 @@ function toUrls(glob: Record<string, unknown>): string[] {
   return Object.keys(glob).sort().map((key) => glob[key] as string)
 }
 
-function fillStrip(urls: string[], minCount = 30): string[] {
+function fillStrip(urls: string[], minCount = 12): string[] {
   if (urls.length === 0) return []
   const repeated: string[] = []
   while (repeated.length < minCount) repeated.push(...urls)
@@ -75,7 +75,7 @@ export default function MarqueeSection() {
                   <div className={`marquee-inner${reverse ? ' marquee-inner--reverse' : ''}`}>
                     {strip.map((src, i) => (
                       <span key={i} className="logo-chip">
-                        <img src={src} alt={altFromPath(src)} />
+                        <img src={src} alt={altFromPath(src)} loading="lazy" decoding="async" />
                       </span>
                     ))}
                   </div>

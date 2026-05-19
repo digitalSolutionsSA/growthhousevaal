@@ -1,4 +1,4 @@
-import ghvImage from '../assets/GHV.png'
+import ghvImage from '../assets/GHV.webp'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
 export default function Hero() {

@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
         <a href="#home" className="navbar__logo">
-          <img src={logoVaal} alt="GrowthHouse Vaal" width="180" height="48" />
+          <img src={logoVaal} alt="GrowthHouse Vaal" width="180" height="48" fetchPriority="high" decoding="async" />
         </a>
         <ul className="navbar__links">
           {navLinks.map((l) => (
