@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_ENV = "production"
+  NPM_FLAGS = "--include=dev"
 
 # Cache hashed assets forever (Vite appends content hash to filenames)
 [[headers]]
